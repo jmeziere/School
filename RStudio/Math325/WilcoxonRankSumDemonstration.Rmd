@@ -1,0 +1,401 @@
+---
+title: "Wilcoxon Rank Sum Demonstration"
+output: 
+  html_document:
+    code_folding: hide
+    theme: cerulean
+---
+
+```{r load_library, include=FALSE}
+# Use this R-Chunk to load your libraries!
+library(tidyverse)
+library(DT)
+library(pander)
+library(readr)
+library(car)
+
+```
+
+
+## Small Sample Size - Same Distribution
+
+```{r message=FALSE, warning=FALSE}
+n <- 6                      # sample size
+
+mean <-  20                 # distribution mean
+
+sigma <- 6                  # distribution standard deviation
+
+A <- rnorm(n, mean, sigma) # normally distributed data
+B <- rnorm(n, mean, sigma) # normally distributed data
+
+dat <- data.frame(group = c(rep("A", n), rep("B", n)), value = c(A, B))
+
+alpha = 0.05
+
+myTest <- wilcox.test(A, B, paired = FALSE, mu = 0, alternative = "two.sided", conf.level = 1 - alpha)
+
+layout(matrix(c(1,2), 2, 1, byrow = TRUE), heights=c(4,2))
+par(mai=c(.5, .5, .6, .01))
+colors = c("steelblue", "sienna1")
+
+stripchart(value ~ group, data = dat, pch = 16, col = colors, ylim = c(0,10), xlim = c(0, 40), main = paste("Small Sample - Same Distribution (p-value: ", round(myTest$p.value, 4), ")", ifelse(myTest$p.value < alpha, "\n -- TYPE I ERROR --", "")))
+
+curve(100 * dnorm(x, mean, sigma) + 3, add = TRUE, from=-20, to=40)
+abline(h = 3)
+lines(c(mean, mean), c(dnorm(mean, mean, sigma)*100 + 3, 3))
+boxplot(A, B,
+        names = c("A", "B"),
+        ylim = c(0, 40),
+       # col = ifelse(myTest$p.value < alpha, "red", "skyblue"),
+        col = colors,
+        boxwex=.5,
+        horizontal = TRUE)
+
+
+pander(myTest)
+```
+
+
+## Small Sample Size - Different Distribution
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+n <- 6                      # sample size
+
+mean_A <-  15                 # distribution A mean
+
+mean_B <-  25                 # distribution B mean
+
+sigma <- 6                  # distribution standard deviation
+
+A <- rnorm(n, mean_A, sigma) # normally distributed data
+B <- rnorm(n, mean_B, sigma) # normally distributed data
+
+dat <- data.frame(group = c(rep("A", n), rep("B", n)), value = c(A, B))
+
+alpha = 0.05
+
+myTest <- wilcox.test(A, B, paired = FALSE, mu = 0, alternative = "two.sided", conf.level = 1 - alpha)
+
+layout(matrix(c(1,2), 2, 1, byrow = TRUE), heights=c(4,2))
+par(mai=c(.5, .5, .6, .01))
+colors = c("steelblue", "sienna1")
+
+stripchart(value ~ group, 
+           data = dat, 
+           pch = 16, 
+           col = colors, 
+           ylim = c(0,10), 
+           xlim = c(0, 40), 
+           main = paste("Small Sample - Different Distribution (p-value: ", round(myTest$p.value, 4), ")", ifelse(myTest$p.value > alpha, "\n -- TYPE II ERROR --", "")))
+
+curve(100 * dnorm(x, mean_A, sigma) + 3, add = TRUE, from=-20, to=40, col = colors[1])
+curve(100 * dnorm(x, mean_B, sigma) + 3, add = TRUE, from=-20, to=40, col = colors[2])
+abline(h = 3)
+lines(c(mean_A, mean_A), c(dnorm(mean_A, mean_A, sigma)*100 + 3, 3), col = colors[1])
+lines(c(mean_B, mean_B), c(dnorm(mean_B, mean_B, sigma)*100 + 3, 3), col = colors[2])
+
+boxplot(A, B,
+        names = c("A", "B"),
+        ylim = c(0, 40),
+       # col = ifelse(myTest$p.value < alpha, "red", "skyblue"),
+        col = colors,
+        boxwex=.5,
+        horizontal = TRUE)
+
+
+pander(myTest)
+
+```
+
+
+## Large Sample Size - Same Distribution
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+n <- 30                      # sample size
+
+mean <-  20                 # distribution mean
+
+sigma <- 6                  # distribution standard deviation
+
+A <- rnorm(n, mean, sigma) # normally distributed data
+B <- rnorm(n, mean, sigma) # normally distributed data
+
+dat <- data.frame(group = c(rep("A", n), rep("B", n)), value = c(A, B))
+
+alpha = 0.05
+
+myTest <- wilcox.test(A, B, paired = FALSE, mu = 0, alternative = "two.sided", conf.level = 1 - alpha)
+
+layout(matrix(c(1,2), 2, 1, byrow = TRUE), heights=c(4,2))
+par(mai=c(.5, .5, .6, .01))
+colors = c("steelblue", "sienna1")
+
+stripchart(value ~ group, data = dat, pch = 16, col = colors, ylim = c(0,10), xlim = c(0, 40), main = paste("Large Sample - Same Distribution (p-value: ", round(myTest$p.value, 4), ")", ifelse(myTest$p.value < alpha, "\n -- TYPE I ERROR --", "")))
+
+curve(100 * dnorm(x, mean, sigma) + 3, add = TRUE, from=-20, to=40)
+abline(h = 3)
+lines(c(mean, mean), c(dnorm(mean, mean, sigma)*100 + 3, 3))
+boxplot(A, B,
+        names = c("A", "B"),
+        ylim = c(0, 40),
+       # col = ifelse(myTest$p.value < alpha, "red", "skyblue"),
+        col = colors,
+        boxwex=.5,
+        horizontal = TRUE)
+
+pander(myTest)
+
+```
+
+
+## Large Sample Size - Different Distribution
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+n <- 30                      # sample size
+
+mean_A <-  15                 # distribution A mean
+
+mean_B <-  25                 # distribution B mean
+
+sigma <- 6                  # distribution standard deviation
+
+A <- rnorm(n, mean_A, sigma) # normally distributed data
+B <- rnorm(n, mean_B, sigma) # normally distributed data
+
+dat <- data.frame(group = c(rep("A", n), rep("B", n)), value = c(A, B))
+
+alpha = 0.05
+
+myTest <- wilcox.test(A, B, paired = FALSE, mu = 0, alternative = "two.sided", conf.level = 1 - alpha)
+
+layout(matrix(c(1,2), 2, 1, byrow = TRUE), heights=c(4,2))
+par(mai=c(.5, .5, .6, .01))
+colors = c("steelblue", "sienna1")
+
+stripchart(value ~ group, 
+           data = dat, 
+           pch = 16, 
+           col = colors, 
+           ylim = c(0,10), 
+           xlim = c(0, 40), 
+           main = paste("Large Sample - Different Distribution (p-value: ", round(myTest$p.value, 4), ")", ifelse(myTest$p.value > alpha, "\n -- TYPE II ERROR --", "")))
+
+curve(100 * dnorm(x, mean_A, sigma) + 3, add = TRUE, from=-20, to=40, col = colors[1])
+curve(100 * dnorm(x, mean_B, sigma) + 3, add = TRUE, from=-20, to=40, col = colors[2])
+abline(h = 3)
+lines(c(mean_A, mean_A), c(dnorm(mean_A, mean_A, sigma)*100 + 3, 3), col = colors[1])
+lines(c(mean_B, mean_B), c(dnorm(mean_B, mean_B, sigma)*100 + 3, 3), col = colors[2])
+
+boxplot(A, B,
+        names = c("A", "B"),
+        ylim = c(0, 40),
+       # col = ifelse(myTest$p.value < alpha, "red", "skyblue"),
+        col = colors,
+        boxwex=.5,
+        horizontal = TRUE)
+
+pander(myTest)
+
+```
+
+
+## Non Normal Distributions - Samll Sample - Same Distribution
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+n <- 6                      # sample size
+
+df_A <-  3                 # distribution A mean
+
+df_B <-  3                 # distribution B mean
+
+A <- rchisq(n, df_A) # chisq distributed data
+B <- rchisq(n, df_B) # chisq distributed data
+
+dat <- data.frame(group = c(rep("A", n), rep("B", n)), value = c(A, B))
+
+alpha = 0.05
+
+myTest <- wilcox.test(A, B, paired = FALSE, mu = 0, alternative = "two.sided", conf.level = 1 - alpha)
+
+layout(matrix(c(1,2), 2, 1, byrow = TRUE), heights=c(4,2))
+par(mai=c(.5, .5, .6, .01))
+colors = c("steelblue", "sienna1")
+
+stripchart(value ~ group, 
+           data = dat, 
+           pch = 16, 
+           col = colors, 
+           ylim = c(0,10), 
+           xlim = c(0, 15), 
+           main = paste("Small Sample - Same Distribution (p-value: ", round(myTest$p.value, 4), ")", ifelse(myTest$p.value < alpha, "\n -- TYPE I ERROR --", "")))
+
+curve(15 * dchisq(x, df_A) + 3, add = TRUE, from=0, to=20)
+curve(15 * dchisq(x, df_B) + 3, add = TRUE, from=0, to=20)
+abline(h = 3)
+lines(c(df_A, df_A), c(dchisq(df_A, df_A)*15 + 3, 3))
+lines(c(df_B, df_B), c(dchisq(df_B, df_B)*15 + 3, 3))
+
+boxplot(A, B,
+        names = c("A", "B"),
+        ylim = c(0, 15),
+       # col = ifelse(myTest$p.value < alpha, "red", "skyblue"),
+        col = colors,
+        boxwex=.5,
+        horizontal = TRUE)
+
+
+pander(myTest)
+
+```
+
+
+## Non Normal Distributions - Small Sample - Different Distribution
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+n <- 6                      # sample size
+
+df_A <-  3                 # distribution A mean
+
+df_B <-  6                 # distribution B mean
+
+A <- rchisq(n, df_A) # chisq distributed data
+B <- rchisq(n, df_B) # chisq distributed data
+
+dat <- data.frame(group = c(rep("A", n), rep("B", n)), value = c(A, B))
+
+alpha = 0.05
+
+myTest <- wilcox.test(A, B, paired = FALSE, mu = 0, alternative = "two.sided", conf.level = 1 - alpha)
+
+layout(matrix(c(1,2), 2, 1, byrow = TRUE), heights=c(4,2))
+par(mai=c(.5, .5, .6, .01))
+colors = c("steelblue", "sienna1")
+
+stripchart(value ~ group, 
+           data = dat, 
+           pch = 16, 
+           col = colors, 
+           ylim = c(0,10), 
+           xlim = c(0, 15), 
+           main = paste("Small Sample - Different Distribution (p-value: ", round(myTest$p.value, 4), ")", ifelse(myTest$p.value > alpha, "\n -- TYPE II ERROR --", "")))
+
+curve(15 * dchisq(x, df_A) + 3, add = TRUE, from=0, to=20, col = colors[1])
+curve(15 * dchisq(x, df_B) + 3, add = TRUE, from=0, to=20, col = colors[2])
+abline(h = 3)
+lines(c(df_A, df_A), c(dchisq(df_A, df_A)*15 + 3, 3), col = colors[1])
+lines(c(df_B, df_B), c(dchisq(df_B, df_B)*15 + 3, 3), col = colors[2])
+
+boxplot(A, B,
+        names = c("A", "B"),
+        ylim = c(0, 15),
+       # col = ifelse(myTest$p.value < alpha, "red", "skyblue"),
+        col = colors,
+        boxwex=.5,
+        horizontal = TRUE)
+
+
+pander(myTest)
+
+```
+
+
+
+## Non Normal Distributions - Large Sample - Same Distribution
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+n <- 30                      # sample size
+
+df_A <-  3                 # distribution A mean
+
+df_B <-  3                 # distribution B mean
+
+A <- rchisq(n, df_A) # chisq distributed data
+B <- rchisq(n, df_B) # chisq distributed data
+
+dat <- data.frame(group = c(rep("A", n), rep("B", n)), value = c(A, B))
+
+alpha = 0.05
+
+myTest <- wilcox.test(A, B, paired = FALSE, mu = 0, alternative = "two.sided", conf.level = 1 - alpha)
+
+layout(matrix(c(1,2), 2, 1, byrow = TRUE), heights=c(4,2))
+par(mai=c(.5, .5, .6, .01))
+colors = c("steelblue", "sienna1")
+
+stripchart(value ~ group, 
+           data = dat, 
+           pch = 16, 
+           col = colors, 
+           ylim = c(0,10), 
+           xlim = c(0, 15), 
+           main = paste("Large Sample - Same Distribution (p-value: ", round(myTest$p.value, 4), ")", ifelse(myTest$p.value < alpha, "\n -- TYPE I ERROR --", "")))
+
+curve(15 * dchisq(x, df_A) + 3, add = TRUE, from=0, to=20)
+curve(15 * dchisq(x, df_B) + 3, add = TRUE, from=0, to=20)
+abline(h = 3)
+lines(c(df_A, df_A), c(dchisq(df_A, df_A)*15 + 3, 3))
+lines(c(df_B, df_B), c(dchisq(df_B, df_B)*15 + 3, 3))
+
+boxplot(A, B,
+        names = c("A", "B"),
+        ylim = c(0, 15),
+       # col = ifelse(myTest$p.value < alpha, "red", "skyblue"),
+        col = colors,
+        boxwex=.5,
+        horizontal = TRUE)
+
+
+pander(myTest)
+
+```
+
+
+## Non Normal Distributions - Large Sample - Different Distribution
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+n <- 30                      # sample size
+
+df_A <-  3                 # distribution A mean
+
+df_B <-  6                 # distribution B mean
+
+A <- rchisq(n, df_A) # chisq distributed data
+B <- rchisq(n, df_B) # chisq distributed data
+
+dat <- data.frame(group = c(rep("A", n), rep("B", n)), value = c(A, B))
+
+alpha = 0.05
+
+myTest <- wilcox.test(A, B, paired = FALSE, mu = 0, alternative = "two.sided", conf.level = 1 - alpha)
+
+layout(matrix(c(1,2), 2, 1, byrow = TRUE), heights=c(4,2))
+par(mai=c(.5, .5, .6, .01))
+colors = c("steelblue", "sienna1")
+
+stripchart(value ~ group, 
+           data = dat, 
+           pch = 16, 
+           col = colors, 
+           ylim = c(0,10), 
+           xlim = c(0, 15), 
+           main = paste("Large Sample - Different Distribution (p-value: ", round(myTest$p.value, 4), ")", ifelse(myTest$p.value > alpha, "\n -- TYPE II ERROR --", "")))
+
+curve(15 * dchisq(x, df_A) + 3, add = TRUE, from=0, to=20, col = colors[1])
+curve(15 * dchisq(x, df_B) + 3, add = TRUE, from=0, to=20, col = colors[2])
+abline(h = 3)
+lines(c(df_A, df_A), c(dchisq(df_A, df_A)*15 + 3, 3), col = colors[1])
+lines(c(df_B, df_B), c(dchisq(df_B, df_B)*15 + 3, 3), col = colors[2])
+
+boxplot(A, B,
+        names = c("A", "B"),
+        ylim = c(0, 15),
+       # col = ifelse(myTest$p.value < alpha, "red", "skyblue"),
+        col = colors,
+        boxwex=.5,
+        horizontal = TRUE)
+
+
+pander(myTest)
+
+```

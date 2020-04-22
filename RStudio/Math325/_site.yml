@@ -1,0 +1,66 @@
+name: "math-325-notebook"
+navbar:
+  title: "Math 325 Notebook"
+  left:
+    - text: "Table of Contents"
+      href: index.html
+    - text: "Plotly"
+      href: Plotly.html
+    - text: "Describing Data"
+      menu:
+        - text: "Graphical Summaries"
+          href: GraphicalSummaries.html
+        - text: "Numerical Summaries"
+          href: NumericalSummaries.html
+    - text: "Making Inference"
+      menu:
+        - text: "Making Inference"
+          href: MakingInference.html
+        - text: "t Tests"
+          href: tTests.html
+        - text: "Wilcoxon Tests"
+          href: WilcoxonTests.html
+        - text: "ANOVA"
+          href: ANOVA.html 
+        - text: "Kurskal-Wallis"
+          href: Kruskal.html
+        - text: "Linear Regression"
+          href: LinearRegression.html
+        - text: "Logistic Regression"
+          href: LogisticRegression.html
+        - text: "Permutation Tests"
+          href: PermutationTests.html
+        - text: "Chi-Squared Tests"
+          href: ChiSquaredTests.html
+    - text: "R Help"
+      menu:
+        - text: "R Commands"
+          href: RCommands.html
+        - text: "R Markdown Hints"
+          href: RMarkdownHints.html
+        - text: "R Cheatsheets & Notes"
+          href: RCheatSheetsAndNotes.html
+    - text: "Analyses"
+      menu:
+        - text: "Analysis Rubric"
+          href: ./Analyses/AnalysisRubric.html
+        - text: "Good Example Analysis"
+          href: ./Analyses/StudentHousing.html
+        - text: "Poor Example Analysis"
+          href: ./Analyses/StudentHousingPOOR.html
+        - text: "Stephanie Analysis"
+          href: ./Analyses/Stephanie.html
+        - text: "Olympics Analysis"
+          href: ./Analyses/Olympics.html
+        - text: "Chocolate Analysis"
+          href: ./Analyses/Chocolate.html
+        - text: "Car Prices Multiple Linear Regression Analysis"
+          href: ./Analyses/CarPrices.html
+    - text: "Data Sources"
+      menu:
+        - text: "Various Links to Data"
+          href: DataSources.html
+          
+output_dir: '.'
+
+  

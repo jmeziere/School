@@ -1,0 +1,10 @@
+Package: python3-moosetutorial
+Source: moosetutorial
+Version: 0.1~dev0-1
+Architecture: all
+Maintainer: unknown <unknown@unknown>
+Installed-Size: 3898
+Depends: python3-kivy, python3-pkg-resources, python3:any
+Section: python
+Priority: optional
+Description: UNKNOWN

@@ -1,0 +1,25 @@
+Format: 1.8
+Date: Wed, 01 Apr 2020 11:39:39 -0600
+Source: moosetutorial
+Binary: python3-moosetutorial
+Architecture: all
+Version: 0.1~dev0-1
+Distribution: unstable
+Urgency: low
+Maintainer: unknown <unknown@unknown>
+Changed-By: unknown <unknown@unknown>
+Description:
+ python3-moosetutorial - UNKNOWN
+Changes:
+ moosetutorial (0.1~dev0-1) unstable; urgency=low
+ .
+   * source package automatically created by stdeb 0.8.5
+Checksums-Sha1:
+ 71b8e066d47fe1f9d45c26fc5d1f324b93baedd0 6003 moosetutorial_0.1~dev0-1_amd64.buildinfo
+ 848711ebc2d70db45cc7be4f98f97325e3feac75 2158476 python3-moosetutorial_0.1~dev0-1_all.deb
+Checksums-Sha256:
+ adb083dacf69cdc899b3c374c433f31de4c59742f2e2299db3f093fe88515ba1 6003 moosetutorial_0.1~dev0-1_amd64.buildinfo
+ e23ecfea063079471f044e64ae3fd704be954ea8f21e990934db8dc2cf8157ce 2158476 python3-moosetutorial_0.1~dev0-1_all.deb
+Files:
+ 3b7e7fb7562067ceac68990324ece445 6003 python optional moosetutorial_0.1~dev0-1_amd64.buildinfo
+ ffc6be241bae2241c81d714245651d52 2158476 python optional python3-moosetutorial_0.1~dev0-1_all.deb

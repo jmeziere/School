@@ -1,0 +1,28 @@
+Format: 1.8
+Date: Wed, 01 Apr 2020 11:38:51 -0600
+Source: moosetutorial
+Architecture: source
+Version: 0.1~dev0-1
+Distribution: unstable
+Urgency: low
+Maintainer: unknown <unknown@unknown>
+Changed-By: unknown <unknown@unknown>
+Changes:
+ moosetutorial (0.1~dev0-1) unstable; urgency=low
+ .
+   * source package automatically created by stdeb 0.8.5
+Checksums-Sha1:
+ c2b105e894bbca8c9346c12494471ef0d987ebee 898 moosetutorial_0.1~dev0-1.dsc
+ 691030e748646ecf4db3174e9567a6617c56d618 2422078 moosetutorial_0.1~dev0.orig.tar.gz
+ 19ff3cd52b1a04407e772c3ad1137eee096e33a6 836 moosetutorial_0.1~dev0-1.debian.tar.xz
+ 7c68a470166c24a625252c553035c4e4921d206e 5958 moosetutorial_0.1~dev0-1_source.buildinfo
+Checksums-Sha256:
+ 967a4b27aa90bfb1998efb772f044c4c5c2bd9eeacc0b8668989de51210fb697 898 moosetutorial_0.1~dev0-1.dsc
+ 303e66489c189ebdfdeb653fc185b5b926a3398a2a62020fb5aeb5a7f9f818e6 2422078 moosetutorial_0.1~dev0.orig.tar.gz
+ 1a5d9898e262fe80cce71161662c0d41a632a12132d1a71dbac899bf2c5d4e15 836 moosetutorial_0.1~dev0-1.debian.tar.xz
+ 3270a53e4ecdf82deed71e7c10e05606d6144c54cb949faee29efdd8401b9046 5958 moosetutorial_0.1~dev0-1_source.buildinfo
+Files:
+ a447b61fadd3f20f1ade1a5ef0e0f54e 898 python optional moosetutorial_0.1~dev0-1.dsc
+ f493eea169ccd00d866611e7d03b0526 2422078 python optional moosetutorial_0.1~dev0.orig.tar.gz
+ ff14d6965fbb4367634ee06dc8957470 836 python optional moosetutorial_0.1~dev0-1.debian.tar.xz
+ d637a759a2e00ffd874280419a77883e 5958 python optional moosetutorial_0.1~dev0-1_source.buildinfo

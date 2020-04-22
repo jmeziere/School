@@ -1,0 +1,44 @@
+---
+title: "Table of Contents"
+output: 
+  html_document:
+    theme: cerulean
+---
+
+<br>
+
+----
+
+Customize this page and any of the Math 325 Notebook so that it becomes a useful *Guide to Statistical Analysis* for your *current* and *future* self. 
+
+<!-- This is how to comment text out. You can comment out the above instructions if you wish. Comments allow the text to remain in the Rmd file, but not be displayed in the html file. -->
+
+[Customization Help](RMarkdownHints.html)
+
+----
+
+</div>
+<div style="padding-left:15px;">
+<!-- Add your customizations in the area below: -->
+
+Plotly stuff
+
+ScatterPlots
+
+plot_ly(data = RentClose, x = ~Price, y = ~WalkingMinutes, text = ~paste(Apartment))
+
+
+
+
+
+
+
+
+<!------------------------------------------------>
+</div>
+<div style="clear:both;"></div>
+
+----
+
+<footer></footer>
+

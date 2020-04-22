@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nglview-demo</title>
+</head>
+<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.css">
+
+
+<!-- Load require.js. Delete this if your page already loads require.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js" crossorigin="anonymous"></script>
+
+<script type="application/vnd.jupyter.widget-state+json">
+{
+  "version_major": 2,
+  "version_minor": 0,
+  "state": {
+    "fe9135aa766f4971a0d8f4f2f3bb7776": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "adf4a59fca0c4849afc4d7399ff9a669": {
+      "model_name": "ColormakerRegistryModel",
+      "model_module": "nglview-js-widgets",
+      "model_module_version": "2.7.5",
+      "state": {
+        "_dom_classes": [],
+        "_msg_ar": [],
+        "_msg_q": [],
+        "layout": "IPY_MODEL_fe9135aa766f4971a0d8f4f2f3bb7776"
+      }
+    },
+    "005d0fb90ed048a2842142da6f4698ac": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "f89b88053eaa47f69d7449d20e94cfa6": {
+      "model_name": "NGLModel",
+      "model_module": "nglview-js-widgets",
+      "model_module_version": "2.7.5",
+      "state": {
+        "_camera_orientation": [],
+        "_dom_classes": [],
+        "_ibtn_fullscreen": "IPY_MODEL_b77b006f6467438281c07044ef053424",
+        "_igui": null,
+        "_iplayer": "IPY_MODEL_ab197dd28ae144efa7705b2e98977566",
+        "_ngl_color_dict": {},
+        "_ngl_coordinate_resource": {},
+        "_ngl_full_stage_parameters": {},
+        "_ngl_msg_archive": [
+          {
+            "target": "Stage",
+            "type": "call_method",
+            "methodName": "loadFile",
+            "reconstruc_color_scheme": false,
+            "args": [
+              {
+                "type": "blob",
+                "data": "CRYST1   15.000   15.000   15.000  90.00  90.00  90.00 P 1\nMODEL     1\nATOM      0   Al   Al     0      0.000   0.000   0.000  1.00  0.00          Al \nATOM      1   Al   Al     1      2.500   2.500   0.000  1.00  0.00          Al \nATOM      2   Al   Al     2      2.500   0.000   2.500  1.00  0.00          Al \nATOM      3   Al   Al     3      0.000   2.500   2.500  1.00  0.00          Al \nATOM      4   Al   Al     4      0.000   5.000   0.000  1.00  0.00          Al \nATOM      5   Al   Al     5      2.500   7.500   0.000  1.00  0.00          Al \nATOM      6   Al   Al     6      2.500   5.000   2.500  1.00  0.00          Al \nATOM      7   Al   Al     7      0.000   7.500   2.500  1.00  0.00          Al \nATOM      8   Al   Al     8      0.000  10.000   0.000  1.00  0.00          Al \nATOM      9   Al   Al     9      2.500  12.500   0.000  1.00  0.00          Al \nATOM     10   Al   Al    10      2.500  10.000   2.500  1.00  0.00          Al \nATOM     11   Al   Al    11      0.000  12.500   2.500  1.00  0.00          Al \nATOM     12   Al   Al    12      5.000   0.000   0.000  1.00  0.00          Al \nATOM     13   Al   Al    13      7.500   2.500   0.000  1.00  0.00          Al \nATOM     14   Al   Al    14      7.500   0.000   2.500  1.00  0.00          Al \nATOM     15   Al   Al    15      5.000   2.500   2.500  1.00  0.00          Al \nATOM     16   Al   Al    16      5.000   5.000   0.000  1.00  0.00          Al \nATOM     17   Al   Al    17      7.500   7.500   0.000  1.00  0.00          Al \nATOM     18   Al   Al    18      7.500   5.000   2.500  1.00  0.00          Al \nATOM     19   Al   Al    19      5.000   7.500   2.500  1.00  0.00          Al \nATOM     20   Al   Al    20      5.000  10.000   0.000  1.00  0.00          Al \nATOM     21   Al   Al    21      7.500  12.500   0.000  1.00  0.00          Al \nATOM     22   Al   Al    22      7.500  10.000   2.500  1.00  0.00          Al \nATOM     23   Al   Al    23      5.000  12.500   2.500  1.00  0.00          Al \nATOM     24   Al   Al    24     10.000   0.000   0.000  1.00  0.00          Al \nATOM     25   Al   Al    25     12.500   2.500   0.000  1.00  0.00          Al \nATOM     26   Al   Al    26     12.500   0.000   2.500  1.00  0.00          Al \nATOM     27   Al   Al    27     10.000   2.500   2.500  1.00  0.00          Al \nATOM     28   Al   Al    28     10.000   5.000   0.000  1.00  0.00          Al \nATOM     29   Al   Al    29     12.500   7.500   0.000  1.00  0.00          Al \nATOM     30   Al   Al    30     12.500   5.000   2.500  1.00  0.00          Al \nATOM     31   Al   Al    31     10.000   7.500   2.500  1.00  0.00          Al \nATOM     32   Al   Al    32     10.000  10.000   0.000  1.00  0.00          Al \nATOM     33   Al   Al    33     12.500  12.500   0.000  1.00  0.00          Al \nATOM     34   Al   Al    34     12.500  10.000   2.500  1.00  0.00          Al \nATOM     35   Al   Al    35     10.000  12.500   2.500  1.00  0.00          Al \nATOM     36   Al   Al    36      0.000   0.000   5.000  1.00  0.00          Al \nATOM     37   Al   Al    37      2.500   2.500   5.000  1.00  0.00          Al \nATOM     38   Al   Al    38      2.500   0.000   7.500  1.00  0.00          Al \nATOM     39   Al   Al    39      0.000   2.500   7.500  1.00  0.00          Al \nATOM     40   Al   Al    40      0.000   5.000   5.000  1.00  0.00          Al \nATOM     41   Al   Al    41      2.500   7.500   5.000  1.00  0.00          Al \nATOM     42   Al   Al    42      2.500   5.000   7.500  1.00  0.00          Al \nATOM     43   Al   Al    43      0.000   7.500   7.500  1.00  0.00          Al \nATOM     44   Al   Al    44      0.000  10.000   5.000  1.00  0.00          Al \nATOM     45   Al   Al    45      2.500  12.500   5.000  1.00  0.00          Al \nATOM     46   Al   Al    46      2.500  10.000   7.500  1.00  0.00          Al \nATOM     47   Al   Al    47      0.000  12.500   7.500  1.00  0.00          Al \nATOM     48   Al   Al    48      5.000   0.000   5.000  1.00  0.00          Al \nATOM     49   Al   Al    49      7.500   2.500   5.000  1.00  0.00          Al \nATOM     50   Al   Al    50      7.500   0.000   7.500  1.00  0.00          Al \nATOM     51   Al   Al    51      5.000   2.500   7.500  1.00  0.00          Al \nATOM     52   Al   Al    52      5.000   5.000   5.000  1.00  0.00          Al \nATOM     53   Al   Al    53      7.500   7.500   5.000  1.00  0.00          Al \nATOM     54   Al   Al    54      7.500   5.000   7.500  1.00  0.00          Al \nATOM     55   Al   Al    55      5.000   7.500   7.500  1.00  0.00          Al \nATOM     56   Al   Al    56      5.000  10.000   5.000  1.00  0.00          Al \nATOM     57   Al   Al    57      7.500  12.500   5.000  1.00  0.00          Al \nATOM     58   Al   Al    58      7.500  10.000   7.500  1.00  0.00          Al \nATOM     59   Al   Al    59      5.000  12.500   7.500  1.00  0.00          Al \nATOM     60   Al   Al    60     10.000   0.000   5.000  1.00  0.00          Al \nATOM     61   Al   Al    61     12.500   2.500   5.000  1.00  0.00          Al \nATOM     62   Al   Al    62     12.500   0.000   7.500  1.00  0.00          Al \nATOM     63   Al   Al    63     10.000   2.500   7.500  1.00  0.00          Al \nATOM     64   Al   Al    64     10.000   5.000   5.000  1.00  0.00          Al \nATOM     65   Al   Al    65     12.500   7.500   5.000  1.00  0.00          Al \nATOM     66   Al   Al    66     12.500   5.000   7.500  1.00  0.00          Al \nATOM     67   Al   Al    67     10.000   7.500   7.500  1.00  0.00          Al \nATOM     68   Al   Al    68     10.000  10.000   5.000  1.00  0.00          Al \nATOM     69   Al   Al    69     12.500  12.500   5.000  1.00  0.00          Al \nATOM     70   Al   Al    70     12.500  10.000   7.500  1.00  0.00          Al \nATOM     71   Al   Al    71     10.000  12.500   7.500  1.00  0.00          Al \nATOM     72   Al   Al    72      0.000   0.000  10.000  1.00  0.00          Al \nATOM     73   Al   Al    73      2.500   2.500  10.000  1.00  0.00          Al \nATOM     74   Al   Al    74      2.500   0.000  12.500  1.00  0.00          Al \nATOM     75   Al   Al    75      0.000   2.500  12.500  1.00  0.00          Al \nATOM     76   Al   Al    76      0.000   5.000  10.000  1.00  0.00          Al \nATOM     77   Al   Al    77      2.500   7.500  10.000  1.00  0.00          Al \nATOM     78   Al   Al    78      2.500   5.000  12.500  1.00  0.00          Al \nATOM     79   Al   Al    79     -0.000   7.500  12.500  1.00  0.00          Al \nATOM     80   Al   Al    80      0.000  10.000  10.000  1.00  0.00          Al \nATOM     81   Al   Al    81      2.500  12.500  10.000  1.00  0.00          Al \nATOM     82   Al   Al    82      2.500  10.000  12.500  1.00  0.00          Al \nATOM     83   Al   Al    83      0.000  12.500  12.500  1.00  0.00          Al \nATOM     84   Al   Al    84      5.000   0.000  10.000  1.00  0.00          Al \nATOM     85   Al   Al    85      7.500   2.500  10.000  1.00  0.00          Al \nATOM     86   Al   Al    86      7.500   0.000  12.500  1.00  0.00          Al \nATOM     87   Al   Al    87      5.000   2.500  12.500  1.00  0.00          Al \nATOM     88   Al   Al    88      5.000   5.000  10.000  1.00  0.00          Al \nATOM     89   Al   Al    89      7.500   7.500  10.000  1.00  0.00          Al \nATOM     90   Al   Al    90      7.500   5.000  12.500  1.00  0.00          Al \nATOM     91   Al   Al    91      5.000   7.500  12.500  1.00  0.00          Al \nATOM     92   Al   Al    92      5.000  10.000  10.000  1.00  0.00          Al \nATOM     93   Al   Al    93      7.500  12.500  10.000  1.00  0.00          Al \nATOM     94   Al   Al    94      7.500  10.000  12.500  1.00  0.00          Al \nATOM     95   Al   Al    95      5.000  12.500  12.500  1.00  0.00          Al \nATOM     96   Al   Al    96     10.000   0.000  10.000  1.00  0.00          Al \nATOM     97   Al   Al    97     12.500   2.500  10.000  1.00  0.00          Al \nATOM     98   Al   Al    98     12.500   0.000  12.500  1.00  0.00          Al \nATOM     99   Al   Al    99     10.000   2.500  12.500  1.00  0.00          Al \nATOM    100   Al   Al   100     10.000   5.000  10.000  1.00  0.00          Al \nATOM    101   Al   Al   101     12.500   7.500  10.000  1.00  0.00          Al \nATOM    102   Al   Al   102     12.500   5.000  12.500  1.00  0.00          Al \nATOM    103   Al   Al   103     10.000   7.500  12.500  1.00  0.00          Al \nATOM    104   Al   Al   104     10.000  10.000  10.000  1.00  0.00          Al \nATOM    105   Al   Al   105     12.500  12.500  10.000  1.00  0.00          Al \nATOM    106   Al   Al   106     12.500  10.000  12.500  1.00  0.00          Al \nATOM    107   Al   Al   107     10.000  12.500  12.500  1.00  0.00          Al \nENDMDL \n",
+                "binary": false
+              }
+            ],
+            "kwargs": {
+              "defaultRepresentation": true,
+              "ext": "pdb"
+            }
+          },
+          {
+            "component_index": 0,
+            "target": "compList",
+            "type": "call_method",
+            "methodName": "addRepresentation",
+            "reconstruc_color_scheme": false,
+            "args": [
+              "spacefill"
+            ],
+            "kwargs": {
+              "sele": "#Al",
+              "radiusType": "vdw",
+              "radius": 0.5605551275463989,
+              "colorScheme": "element"
+            }
+          },
+          {
+            "target": "Widget",
+            "type": "call_method",
+            "methodName": "removeRepresentationsByName",
+            "reconstruc_color_scheme": false,
+            "args": [
+              "ball+stick",
+              0
+            ],
+            "kwargs": {}
+          },
+          {
+            "component_index": 0,
+            "target": "compList",
+            "type": "call_method",
+            "methodName": "addRepresentation",
+            "reconstruc_color_scheme": false,
+            "args": [
+              "unitcell"
+            ],
+            "kwargs": {
+              "sele": "all"
+            }
+          },
+          {
+            "target": "Widget",
+            "type": "call_method",
+            "methodName": "addShape",
+            "reconstruc_color_scheme": false,
+            "args": [
+              "shape",
+              [
+                [
+                  "arrow",
+                  [
+                    -1.0,
+                    -1.0,
+                    -1.0
+                  ],
+                  [
+                    0.0,
+                    -1.0,
+                    -1.0
+                  ],
+                  [
+                    1.0,
+                    0.0,
+                    0.0
+                  ],
+                  0.1
+                ]
+              ]
+            ],
+            "kwargs": {},
+            "fire_embed": true
+          },
+          {
+            "target": "Widget",
+            "type": "call_method",
+            "methodName": "addShape",
+            "reconstruc_color_scheme": false,
+            "args": [
+              "shape",
+              [
+                [
+                  "text",
+                  [
+                    0.0,
+                    -1.0,
+                    -1.0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  1,
+                  "x"
+                ]
+              ]
+            ],
+            "kwargs": {},
+            "fire_embed": true
+          },
+          {
+            "target": "Widget",
+            "type": "call_method",
+            "methodName": "addShape",
+            "reconstruc_color_scheme": false,
+            "args": [
+              "shape",
+              [
+                [
+                  "arrow",
+                  [
+                    -1.0,
+                    -1.0,
+                    -1.0
+                  ],
+                  [
+                    -1.0,
+                    0.0,
+                    -1.0
+                  ],
+                  [
+                    0.0,
+                    1.0,
+                    0.0
+                  ],
+                  0.1
+                ]
+              ]
+            ],
+            "kwargs": {},
+            "fire_embed": true
+          },
+          {
+            "target": "Widget",
+            "type": "call_method",
+            "methodName": "addShape",
+            "reconstruc_color_scheme": false,
+            "args": [
+              "shape",
+              [
+                [
+                  "text",
+                  [
+                    -1.0,
+                    0.0,
+                    -1.0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  1,
+                  "y"
+                ]
+              ]
+            ],
+            "kwargs": {},
+            "fire_embed": true
+          },
+          {
+            "target": "Widget",
+            "type": "call_method",
+            "methodName": "addShape",
+            "reconstruc_color_scheme": false,
+            "args": [
+              "shape",
+              [
+                [
+                  "arrow",
+                  [
+                    -1.0,
+                    -1.0,
+                    -1.0
+                  ],
+                  [
+                    -1.0,
+                    -1.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    0.0,
+                    1.0
+                  ],
+                  0.1
+                ]
+              ]
+            ],
+            "kwargs": {},
+            "fire_embed": true
+          },
+          {
+            "target": "Widget",
+            "type": "call_method",
+            "methodName": "addShape",
+            "reconstruc_color_scheme": false,
+            "args": [
+              "shape",
+              [
+                [
+                  "text",
+                  [
+                    -1.0,
+                    -1.0,
+                    0.0
+                  ],
+                  [
+                    0,
+                    0,
+                    0
+                  ],
+                  1,
+                  "z"
+                ]
+              ]
+            ],
+            "kwargs": {},
+            "fire_embed": true
+          },
+          {
+            "target": "Stage",
+            "type": "call_method",
+            "methodName": "setParameters",
+            "reconstruc_color_scheme": false,
+            "args": [],
+            "kwargs": {
+              "cameraType": "orthographic"
+            }
+          }
+        ],
+        "_ngl_original_stage_parameters": {},
+        "_ngl_repr_dict": {},
+        "_ngl_serialize": true,
+        "_ngl_view_id": [],
+        "_player_dict": {},
+        "_scene_position": {},
+        "_scene_rotation": {},
+        "_synced_model_ids": [],
+        "_synced_repr_model_ids": [],
+        "layout": "IPY_MODEL_005d0fb90ed048a2842142da6f4698ac",
+        "picked": {}
+      }
+    },
+    "4f3e7e1adc574114b8f97d19070819e5": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "53d7240a1765438c9d38f5eb362ad791": {
+      "model_name": "ImageModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_4f3e7e1adc574114b8f97d19070819e5",
+        "width": "900.0"
+      }
+    },
+    "76d6e0528d9e4e308b8e8224d9c0a104": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "9de47cd3809c4493ba1ee34a5f47e525": {
+      "model_name": "DescriptionStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "e01dda43292e48a4819536ac4ab0ade3": {
+      "model_name": "PlayModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_76d6e0528d9e4e308b8e8224d9c0a104",
+        "max": 0,
+        "style": "IPY_MODEL_9de47cd3809c4493ba1ee34a5f47e525"
+      }
+    },
+    "7cefd38d15124292a2d3967271ec7048": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "32e9695402934362bda0cf2fe6cc96db": {
+      "model_name": "SliderStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "b9e1058ed05c4f16a61b1bca00ef8efa": {
+      "model_name": "IntSliderModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "layout": "IPY_MODEL_7cefd38d15124292a2d3967271ec7048",
+        "max": 0,
+        "style": "IPY_MODEL_32e9695402934362bda0cf2fe6cc96db"
+      }
+    },
+    "42c1d8a3d5b24968b2b8d857aa34f550": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {}
+    },
+    "ab197dd28ae144efa7705b2e98977566": {
+      "model_name": "HBoxModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "children": [
+          "IPY_MODEL_e01dda43292e48a4819536ac4ab0ade3",
+          "IPY_MODEL_b9e1058ed05c4f16a61b1bca00ef8efa"
+        ],
+        "layout": "IPY_MODEL_42c1d8a3d5b24968b2b8d857aa34f550"
+      }
+    },
+    "f64d454c322a43aa86eb1e5b75aa796b": {
+      "model_name": "LinkModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "source": [
+          "IPY_MODEL_e01dda43292e48a4819536ac4ab0ade3",
+          "value"
+        ],
+        "target": [
+          "IPY_MODEL_b9e1058ed05c4f16a61b1bca00ef8efa",
+          "value"
+        ]
+      }
+    },
+    "6a7aaac22b404573b491489acad8411a": {
+      "model_name": "LinkModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "source": [
+          "IPY_MODEL_e01dda43292e48a4819536ac4ab0ade3",
+          "value"
+        ],
+        "target": [
+          "IPY_MODEL_f89b88053eaa47f69d7449d20e94cfa6",
+          "frame"
+        ]
+      }
+    },
+    "f47eef40d25e406093e32796d226197a": {
+      "model_name": "LinkModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "source": [
+          "IPY_MODEL_e01dda43292e48a4819536ac4ab0ade3",
+          "max"
+        ],
+        "target": [
+          "IPY_MODEL_f89b88053eaa47f69d7449d20e94cfa6",
+          "max_frame"
+        ]
+      }
+    },
+    "5448831d7ed546588f7a48f3dd671dd4": {
+      "model_name": "LinkModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "source": [
+          "IPY_MODEL_b9e1058ed05c4f16a61b1bca00ef8efa",
+          "max"
+        ],
+        "target": [
+          "IPY_MODEL_f89b88053eaa47f69d7449d20e94cfa6",
+          "max_frame"
+        ]
+      }
+    },
+    "b1436c739b4347e6911454bac5ed3da3": {
+      "model_name": "LayoutModel",
+      "model_module": "@jupyter-widgets/base",
+      "model_module_version": "1.2.0",
+      "state": {
+        "width": "34px"
+      }
+    },
+    "ef4848c0a628451cbf75e0090c2af739": {
+      "model_name": "ButtonStyleModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {}
+    },
+    "b77b006f6467438281c07044ef053424": {
+      "model_name": "ButtonModel",
+      "model_module": "@jupyter-widgets/controls",
+      "model_module_version": "1.5.0",
+      "state": {
+        "_dom_classes": [],
+        "icon": "compress",
+        "layout": "IPY_MODEL_b1436c739b4347e6911454bac5ed3da3",
+        "style": "IPY_MODEL_ef4848c0a628451cbf75e0090c2af739"
+      }
+    }
+  }
+}
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "adf4a59fca0c4849afc4d7399ff9a669"}
+</script>
+<script type="application/vnd.jupyter.widget-view+json">
+{"version_major": 2, "version_minor": 0, "model_id": "f89b88053eaa47f69d7449d20e94cfa6"}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7785,        205]
+NotebookOptionsPosition[      7024,        182]
+NotebookOutlinePosition[      7357,        197]
+CellTagsIndexPosition[      7314,        194]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Problem 1.17d", "Section",
+ CellChangeTimes->{{3.777948675161923*^9, 
+  3.7779486852222958`*^9}},ExpressionUUID->"af55a375-77cc-4e00-bdc1-\
+eaac562652d6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"temp", "=", 
+   RowBox[{"{", 
+    RowBox[{
+    "100", ",", "200", ",", "300", ",", "400", ",", "500", ",", "600"}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"B", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "160"}], ",", 
+     RowBox[{"-", "35"}], ",", 
+     RowBox[{"-", "4.2"}], ",", "9", ",", "16.9", ",", "21.3"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", "=", 
+   RowBox[{"Thread", "[", 
+    RowBox[{"{", 
+     RowBox[{"temp", ",", "B"}], "}"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R", "=", "8.315"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"nlm", "=", 
+   RowBox[{"NonlinearModelFit", "[", 
+    RowBox[{"data", ",", 
+     RowBox[{"b", "-", 
+      FractionBox["a", 
+       RowBox[{"R", " ", "T"}]]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"b", ",", "a"}], "}"}], ",", "T"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Show", "[", 
+  RowBox[{
+   RowBox[{"ListPlot", "[", "data", "]"}], ",", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"nlm", "[", "x", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "50", ",", "600"}], "}"}]}], "]"}]}], "]"}]}], "Input",\
+
+ CellChangeTimes->{{3.777948418307797*^9, 3.777948508557516*^9}, {
+  3.777948541628572*^9, 3.777948637434432*^9}, {3.7779486895802097`*^9, 
+  3.7779486906199903`*^9}},
+ CellLabel->"In[38]:=",ExpressionUUID->"31342c48-1245-45c1-8758-f244d1686a69"],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {
+     {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+      0.012833333333333334`], AbsoluteThickness[1.6], 
+      PointBox[{{100., -160.}, {200., -35.}, {300., -4.2}, {400., 9.}, {500., 
+       16.9}, {600., 21.3}}]}, {
+      {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       0.012833333333333334`], AbsoluteThickness[1.6]}, {}}, {
+      {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       0.012833333333333334`], AbsoluteThickness[
+       1.6]}, {}}}, {{}, {}}}, {{{}, {}, 
+     TagBox[
+      {RGBColor[0.368417, 0.506779, 0.709798], AbsoluteThickness[1.6], 
+       Opacity[1.], LineBox[CompressedData["
+1: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
+
+        "]]},
+      Annotation[#, "Charting`Private`Tag$8839#1"]& ]}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "OptimizePlotMarkers" -> True, 
+    "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0, 600.}, {-160., 21.3}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.7779485093889503`*^9, 3.777948602369554*^9, {3.777948634272398*^9, 
+   3.7779486378283033`*^9}, 3.777948691196555*^9},
+ CellLabel->"Out[43]=",ExpressionUUID->"3c6580aa-6729-4eff-8a79-041bc39463b5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"2", "*", "9.8", "*", 
+  RowBox[{"28.74", "/", 
+   RowBox[{"(", 
+    RowBox[{"7", "*", "6.022", "*", "1.381"}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.7779532964174547`*^9, 3.7779533902335367`*^9}},
+ CellLabel->"In[47]:=",ExpressionUUID->"5173dabd-7ae4-4828-9d64-90a220dc9098"],
+
+Cell[BoxData["9.676323189579314`"], "Output",
+ CellChangeTimes->{{3.777953370464779*^9, 3.777953390877603*^9}},
+ CellLabel->"Out[47]=",ExpressionUUID->"77fdbdcd-f599-408b-9369-76cae8e186b2"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{925, 1016},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 160, 3, 68, "Section",ExpressionUUID->"af55a375-77cc-4e00-bdc1-eaac562652d6"],
+Cell[CellGroupData[{
+Cell[765, 29, 1471, 44, 163, "Input",ExpressionUUID->"31342c48-1245-45c1-8758-f244d1686a69"],
+Cell[2239, 75, 4223, 88, 226, "Output",ExpressionUUID->"3c6580aa-6729-4eff-8a79-041bc39463b5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6499, 168, 304, 6, 31, "Input",ExpressionUUID->"5173dabd-7ae4-4828-9d64-90a220dc9098"],
+Cell[6806, 176, 190, 2, 35, "Output",ExpressionUUID->"77fdbdcd-f599-408b-9369-76cae8e186b2"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

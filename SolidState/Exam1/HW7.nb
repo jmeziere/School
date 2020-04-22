@@ -1,0 +1,1169 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     46243,       1161]
+NotebookOptionsPosition[     40812,       1084]
+NotebookOutlinePosition[     41149,       1099]
+CellTagsIndexPosition[     41106,       1096]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Problem 2.17", "Subsection",
+ CellChangeTimes->{{3.781472732491926*^9, 3.781472733492963*^9}, {
+  3.78147284519145*^9, 
+  3.7814728457852507`*^9}},ExpressionUUID->"cce2937a-87cb-4269-b247-\
+5efb1e9bb05f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a", "=", "3.5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a1", " ", "=", " ", 
+   RowBox[{"a", 
+    RowBox[{"{", 
+     RowBox[{
+      FractionBox["1", "2"], ",", 
+      FractionBox["1", "2"], ",", "0"}], "}"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a2", "=", 
+   RowBox[{"a", 
+    RowBox[{"{", 
+     RowBox[{
+      FractionBox["1", "2"], ",", "0", ",", 
+      FractionBox["1", "2"]}], "}"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a3", "=", 
+   RowBox[{"a", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", 
+      FractionBox["1", "2"], ",", 
+      FractionBox["1", "2"]}], "}"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"b1", " ", "=", " ", 
+  RowBox[{"2", "\[Pi]", " ", 
+   FractionBox[
+    RowBox[{"Cross", "[", 
+     RowBox[{"a2", ",", "a3"}], "]"}], 
+    RowBox[{"Dot", "[", 
+     RowBox[{"a1", ",", 
+      RowBox[{"Cross", "[", 
+       RowBox[{"a2", ",", "a3"}], "]"}]}], 
+     "]"}]]}]}], "\[IndentingNewLine]", 
+ RowBox[{"b2", " ", "=", " ", 
+  RowBox[{"2", "\[Pi]", " ", 
+   FractionBox[
+    RowBox[{"Cross", "[", 
+     RowBox[{"a3", ",", "a1"}], "]"}], 
+    RowBox[{"Dot", "[", 
+     RowBox[{"a2", ",", 
+      RowBox[{"Cross", "[", 
+       RowBox[{"a3", ",", "a1"}], "]"}]}], 
+     "]"}]]}]}], "\[IndentingNewLine]", 
+ RowBox[{"b3", " ", "=", " ", 
+  RowBox[{"2", "\[Pi]", " ", 
+   FractionBox[
+    RowBox[{"Cross", "[", 
+     RowBox[{"a1", ",", "a2"}], "]"}], 
+    RowBox[{"Dot", "[", 
+     RowBox[{"a3", ",", 
+      RowBox[{"Cross", "[", 
+       RowBox[{"a1", ",", "a2"}], "]"}]}], 
+     "]"}]]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"G", "[", 
+   RowBox[{"h_", ",", "k_", ",", "l_"}], "]"}], ":=", 
+  RowBox[{"Norm", "[", 
+   RowBox[{
+    RowBox[{"h", " ", "b1"}], " ", "+", " ", 
+    RowBox[{"k", " ", "b2"}], " ", "+", " ", 
+    RowBox[{"l", " ", "b3"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Lambda]", "=", "1.542"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"WaveNumber", "=", 
+   RowBox[{"2", 
+    FractionBox["\[Pi]", "\[Lambda]"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"h", "=", "0"}], ",", 
+   RowBox[{"h", "<", "6"}], ",", 
+   RowBox[{"h", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"k", "=", "0"}], ",", 
+     RowBox[{"k", "<", "6"}], ",", 
+     RowBox[{"k", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"l", "=", "0"}], ",", 
+       RowBox[{"l", "<", "6"}], ",", 
+       RowBox[{"l", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"angle", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"ArcSin", "[", 
+            FractionBox[
+             RowBox[{"G", "[", 
+              RowBox[{"h", ",", "k", ",", "l"}], "]"}], 
+             RowBox[{"2", " ", "WaveNumber"}]], "]"}], "*", 
+           RowBox[{"180", "/", "\[Pi]"}]}], "//", "N"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Im", "[", "angle", "]"}], "\[Equal]", "0"}], ",", 
+          RowBox[{"Print", "[", 
+           RowBox[{
+           "\"\<The Bragg angle \>\"", ",", "angle", ",", 
+            "\"\< corresponds to  plane (\>\"", ",", "h", ",", "k", ",", "l", 
+            ",", "\"\<)\>\""}], "]"}]}], "]"}]}]}], "]"}]}], "]"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.781472858161175*^9, 3.781472864726119*^9}, {
+  3.781472966879582*^9, 3.781473136089713*^9}, {3.7814731672456903`*^9, 
+  3.781473337972002*^9}, {3.781473421217304*^9, 3.781473510791822*^9}, {
+  3.78147356803601*^9, 3.781473578258644*^9}, {3.781473765852292*^9, 
+  3.781473766005382*^9}, {3.7832991465755*^9, 3.7832991803392897`*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"1860e74c-eeac-4d95-ada8-2198c708129f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1.7951958020513104`", ",", "1.7951958020513104`", ",", 
+   RowBox[{"-", "1.7951958020513104`"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.783299180842009*^9},
+ CellLabel->"Out[32]=",ExpressionUUID->"23267a2e-4813-4378-b19d-1a93160131a8"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1.7951958020513104`", ",", 
+   RowBox[{"-", "1.7951958020513104`"}], ",", "1.7951958020513104`"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.783299180845036*^9},
+ CellLabel->"Out[33]=",ExpressionUUID->"b458beac-221c-4392-a4bc-2e569ac7555f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "1.7951958020513104`"}], ",", "1.7951958020513104`", ",", 
+   "1.7951958020513104`"}], "}"}]], "Output",
+ CellChangeTimes->{3.783299180847246*^9},
+ CellLabel->"Out[34]=",ExpressionUUID->"9d76db08-5fc3-4d53-afd2-895afce5b665"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", "0.`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "0", "\[InvisibleSpace]", "0", "\[InvisibleSpace]", 
+   "0", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 0., " corresponds to  plane (", 0, 0, 0, ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180849226*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"ef9f087f-f08f-4718-a6a5-0688845e8980"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "22.429481436734406`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "0", "\[InvisibleSpace]", "0", "\[InvisibleSpace]", 
+   "1", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 22.429481436734406`, " corresponds to  plane (", 0, 0, 
+   1, ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.7832991808513603`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"66a989f4-c3da-4e4f-ba7e-750765ab6604"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "49.737554026598886`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "0", "\[InvisibleSpace]", "0", "\[InvisibleSpace]", 
+   "2", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 49.737554026598886`, " corresponds to  plane (", 0, 0, 
+   2, ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180853116*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"1abc26ab-2258-492d-9de4-d9e822ecb452"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "22.429481436734406`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "0", "\[InvisibleSpace]", "1", "\[InvisibleSpace]", 
+   "0", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 22.429481436734406`, " corresponds to  plane (", 0, 1, 
+   0, ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180854289*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"61fe765f-091b-4b8f-ac86-f68434b6bdd9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "26.140346209219242`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "0", "\[InvisibleSpace]", "1", "\[InvisibleSpace]", 
+   "1", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 26.140346209219242`, " corresponds to  plane (", 0, 1, 
+   1, ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180855506*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"f13bc54f-3268-4793-8bda-48a95479c450"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "46.93714245604164`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "0", "\[InvisibleSpace]", "1", "\[InvisibleSpace]", 
+   "2", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 46.93714245604164, " corresponds to  plane (", 0, 1, 2, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.7832991808567963`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"446b9f2e-6b65-4a54-996c-913f973b5390"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "49.737554026598886`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "0", "\[InvisibleSpace]", "2", "\[InvisibleSpace]", 
+   "0", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 49.737554026598886`, " corresponds to  plane (", 0, 2, 
+   0, ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180857875*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"bf34e568-a596-4c7f-8a1d-62eb8bb89da0"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "46.93714245604164`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "0", "\[InvisibleSpace]", "2", "\[InvisibleSpace]", 
+   "1", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 46.93714245604164, " corresponds to  plane (", 0, 2, 1, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180858985*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"824c04da-5564-4324-a74a-14a38510a1ef"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "61.78053437222967`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "0", "\[InvisibleSpace]", "2", "\[InvisibleSpace]", 
+   "2", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 61.78053437222967, " corresponds to  plane (", 0, 2, 2, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.7832991808601513`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"c1a40ef4-fc6f-420a-8997-73b8f61c7c83"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "22.429481436734406`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "1", "\[InvisibleSpace]", "0", "\[InvisibleSpace]", 
+   "0", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 22.429481436734406`, " corresponds to  plane (", 1, 0, 
+   0, ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180861226*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"e18f5725-547a-46c3-8ab5-464e0c203ab2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "26.140346209219242`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "1", "\[InvisibleSpace]", "0", "\[InvisibleSpace]", 
+   "1", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 26.140346209219242`, " corresponds to  plane (", 1, 0, 
+   1, ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.7832991808623047`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"272e268e-6916-4ad1-b856-93242d0104da"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "46.93714245604164`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "1", "\[InvisibleSpace]", "0", "\[InvisibleSpace]", 
+   "2", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 46.93714245604164, " corresponds to  plane (", 1, 0, 2, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.7832991808633327`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"6cf061d6-24c2-4b69-ad81-ee7c7a23ee08"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "26.140346209219242`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "1", "\[InvisibleSpace]", "1", "\[InvisibleSpace]", 
+   "0", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 26.140346209219242`, " corresponds to  plane (", 1, 1, 
+   0, ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.7832991808643713`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"c14139de-26d9-4a77-aa09-427e8d716df7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "22.429481436734406`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "1", "\[InvisibleSpace]", "1", "\[InvisibleSpace]", 
+   "1", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 22.429481436734406`, " corresponds to  plane (", 1, 1, 
+   1, ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180865369*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"5646427b-ce1a-4bd0-b6ec-5ae99fb8192a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "38.54009090771922`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "1", "\[InvisibleSpace]", "1", "\[InvisibleSpace]", 
+   "2", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 38.54009090771922, " corresponds to  plane (", 1, 1, 2, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180866414*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"d95f407b-e316-489a-9d07-cce6034166e3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "73.78142080680661`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "1", "\[InvisibleSpace]", "1", "\[InvisibleSpace]", 
+   "3", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 73.78142080680661, " corresponds to  plane (", 1, 1, 3, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180867689*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"57bbface-ac93-4324-87e5-86dfeaea7b18"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "46.93714245604164`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "1", "\[InvisibleSpace]", "2", "\[InvisibleSpace]", 
+   "0", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 46.93714245604164, " corresponds to  plane (", 1, 2, 0, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180868905*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"0d1d6ee3-5f4f-4f05-aa30-e303a6e20c28"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "38.54009090771922`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "1", "\[InvisibleSpace]", "2", "\[InvisibleSpace]", 
+   "1", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 38.54009090771922, " corresponds to  plane (", 1, 2, 1, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180870138*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"be66bf7c-99df-4c83-9512-64907a55ad20"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "46.93714245604164`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "1", "\[InvisibleSpace]", "2", "\[InvisibleSpace]", 
+   "2", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 46.93714245604164, " corresponds to  plane (", 1, 2, 2, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180871519*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"530e6e60-3b6b-4e0b-9cb6-b63b2d499e19"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "80.1127840929984`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "1", "\[InvisibleSpace]", "2", "\[InvisibleSpace]", 
+   "3", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 80.1127840929984, " corresponds to  plane (", 1, 2, 3, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180872444*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"694df8f0-14d1-4b78-8c75-cd830c8c2dc1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "73.78142080680661`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "1", "\[InvisibleSpace]", "3", "\[InvisibleSpace]", 
+   "1", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 73.78142080680661, " corresponds to  plane (", 1, 3, 1, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180873329*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"792c6e63-912f-47d7-b1f0-0d7643d26917"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "80.1127840929984`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "1", "\[InvisibleSpace]", "3", "\[InvisibleSpace]", 
+   "2", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 80.1127840929984, " corresponds to  plane (", 1, 3, 2, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.78329918087427*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"665a90a2-8c3b-4f31-902e-37495eb0fb5b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "49.737554026598886`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "0", "\[InvisibleSpace]", 
+   "0", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 49.737554026598886`, " corresponds to  plane (", 2, 0, 
+   0, ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180875276*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"4452095a-8858-4e4b-8e48-6922b9cc09fb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "46.93714245604164`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "0", "\[InvisibleSpace]", 
+   "1", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 46.93714245604164, " corresponds to  plane (", 2, 0, 1, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180876275*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"bac0a6a2-effe-4447-bc36-7d33482a93e4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "61.78053437222967`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "0", "\[InvisibleSpace]", 
+   "2", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 61.78053437222967, " corresponds to  plane (", 2, 0, 2, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180877244*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"12b08ecf-9bda-4ec5-b994-6e9d9424dbbe"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "46.93714245604164`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "1", "\[InvisibleSpace]", 
+   "0", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 46.93714245604164, " corresponds to  plane (", 2, 1, 0, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180878193*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"c4237570-6bb7-480d-8864-358025d68ba6"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "38.54009090771922`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "1", "\[InvisibleSpace]", 
+   "1", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 38.54009090771922, " corresponds to  plane (", 2, 1, 1, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180879216*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"a98f3b87-3928-4c54-b3d9-ded678c1fd94"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "46.93714245604164`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "1", "\[InvisibleSpace]", 
+   "2", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 46.93714245604164, " corresponds to  plane (", 2, 1, 2, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.7832991808802023`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"dd744d85-3457-4ffe-adf2-7ad8de33670a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "80.1127840929984`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "1", "\[InvisibleSpace]", 
+   "3", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 80.1127840929984, " corresponds to  plane (", 2, 1, 3, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180881208*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"04f189f1-5444-4821-96dc-1f41c164a9bb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "61.78053437222967`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "2", "\[InvisibleSpace]", 
+   "0", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 61.78053437222967, " corresponds to  plane (", 2, 2, 0, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.78329918088231*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"a894191f-8b86-4266-aa1e-bd4d5710bd86"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "46.93714245604164`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "2", "\[InvisibleSpace]", 
+   "1", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 46.93714245604164, " corresponds to  plane (", 2, 2, 1, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180883423*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"4269d27f-4df4-4fa3-92ed-6b271fee5ad9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "49.737554026598886`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "2", "\[InvisibleSpace]", 
+   "2", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 49.737554026598886`, " corresponds to  plane (", 2, 2, 
+   2, ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180884459*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"9fe0491a-4fc6-43d3-8cb6-027d1b21a62e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "73.78142080680661`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "2", "\[InvisibleSpace]", 
+   "3", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 73.78142080680661, " corresponds to  plane (", 2, 2, 3, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180885459*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"121c236b-307f-4675-a4e1-573b87c62962"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "80.1127840929984`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "3", "\[InvisibleSpace]", 
+   "1", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 80.1127840929984, " corresponds to  plane (", 2, 3, 1, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180886497*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"04c01327-6553-4ae5-adb1-8206d7d43c8a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "73.78142080680661`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "3", "\[InvisibleSpace]", 
+   "2", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 73.78142080680661, " corresponds to  plane (", 2, 3, 2, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180887529*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"3cb4c575-ef96-4f2d-ae8f-59d758518f8d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "73.78142080680661`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "3", "\[InvisibleSpace]", "1", "\[InvisibleSpace]", 
+   "1", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 73.78142080680661, " corresponds to  plane (", 3, 1, 1, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.78329918088855*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"273b141c-972c-4edb-9aec-47432c87b105"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "80.1127840929984`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "3", "\[InvisibleSpace]", "1", "\[InvisibleSpace]", 
+   "2", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 80.1127840929984, " corresponds to  plane (", 3, 1, 2, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180889536*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"6afda45a-414a-4d2c-882e-07040421c33d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "80.1127840929984`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "3", "\[InvisibleSpace]", "2", "\[InvisibleSpace]", 
+   "1", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 80.1127840929984, " corresponds to  plane (", 3, 2, 1, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180890596*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"6a107e5d-9b55-4680-be4e-ce680a37e161"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "73.78142080680661`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "3", "\[InvisibleSpace]", "2", "\[InvisibleSpace]", 
+   "2", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 73.78142080680661, " corresponds to  plane (", 3, 2, 2, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{{3.781473428429257*^9, 3.781473512612298*^9}, 
+   3.781473767491395*^9, {3.783299169907899*^9, 3.783299180891616*^9}},
+ CellLabel->
+  "During evaluation of \
+In[28]:=",ExpressionUUID->"7d10e389-6d7d-4c31-84be-0e85df980fb9"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Problem 2.18", "Subsection",
+ CellChangeTimes->{{3.78147284999728*^9, 
+  3.781472853165759*^9}},ExpressionUUID->"3ce75455-19d8-4211-8fb1-\
+88ca5eb4fbdc"],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "k", "]"}]], "Input",
+ CellChangeTimes->{{3.781473283151499*^9, 3.7814732862749977`*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"8b0b3274-116f-4573-8949-87bef86038f9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$Assumptions", "=", 
+   RowBox[{"Element", "[", 
+    RowBox[{"m", ",", "Integers"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", "=", "3.5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a1", " ", "=", " ", 
+   RowBox[{"a", 
+    RowBox[{"{", 
+     RowBox[{
+      FractionBox["1", "2"], ",", 
+      FractionBox["1", "2"], ",", 
+      FractionBox["1", "2"]}], "}"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a2", "=", 
+   RowBox[{"a", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a3", "=", 
+   RowBox[{"a", 
+    RowBox[{"{", 
+     RowBox[{"0", ",", "0", ",", "1"}], "}"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b1", " ", "=", " ", 
+   RowBox[{"2", "\[Pi]", " ", 
+    FractionBox[
+     RowBox[{"Cross", "[", 
+      RowBox[{"a2", ",", "a3"}], "]"}], 
+     RowBox[{"Dot", "[", 
+      RowBox[{"a1", ",", 
+       RowBox[{"Cross", "[", 
+        RowBox[{"a2", ",", "a3"}], "]"}]}], "]"}]]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b2", " ", "=", " ", 
+   RowBox[{"2", "\[Pi]", " ", 
+    FractionBox[
+     RowBox[{"Cross", "[", 
+      RowBox[{"a3", ",", "a1"}], "]"}], 
+     RowBox[{"Dot", "[", 
+      RowBox[{"a2", ",", 
+       RowBox[{"Cross", "[", 
+        RowBox[{"a3", ",", "a1"}], "]"}]}], "]"}]]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b3", " ", "=", " ", 
+   RowBox[{"2", "\[Pi]", " ", 
+    FractionBox[
+     RowBox[{"Cross", "[", 
+      RowBox[{"a1", ",", "a2"}], "]"}], 
+     RowBox[{"Dot", "[", 
+      RowBox[{"a3", ",", 
+       RowBox[{"Cross", "[", 
+        RowBox[{"a1", ",", "a2"}], "]"}]}], "]"}]]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"G", "[", 
+   RowBox[{"h_", ",", "k_", ",", "l_"}], "]"}], ":=", 
+  RowBox[{"Norm", "[", 
+   RowBox[{
+    RowBox[{"h", " ", "b1"}], " ", "+", " ", 
+    RowBox[{"k", " ", "b2"}], " ", "+", " ", 
+    RowBox[{"l", " ", "b3"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"\[Lambda]", "=", "1.542"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"WaveNumber", "=", 
+   RowBox[{"2", 
+    FractionBox["\[Pi]", "\[Lambda]"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"h", "=", "0"}], ",", 
+   RowBox[{"h", "<", "6"}], ",", 
+   RowBox[{"h", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"k", "=", "0"}], ",", 
+     RowBox[{"k", "<", "6"}], ",", 
+     RowBox[{"k", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"l", "=", "0"}], ",", 
+       RowBox[{"l", "<", "6"}], ",", 
+       RowBox[{"l", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"angle", "=", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"ArcSin", "[", 
+            FractionBox[
+             RowBox[{"G", "[", 
+              RowBox[{"h", ",", "k", ",", "l"}], "]"}], 
+             RowBox[{"2", " ", "WaveNumber"}]], "]"}], "*", 
+           RowBox[{"180", "/", "\[Pi]"}]}], "//", "N"}]}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"And", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Im", "[", "angle", "]"}], "\[Equal]", "0"}], ",", 
+            RowBox[{"Or", "[", 
+             RowBox[{
+              RowBox[{"And", "[", 
+               RowBox[{
+                RowBox[{"EvenQ", "[", "h", "]"}], ",", 
+                RowBox[{"EvenQ", "[", "k", "]"}], ",", 
+                RowBox[{"EvenQ", "[", "l", "]"}]}], "]"}], ",", 
+              RowBox[{"And", "[", 
+               RowBox[{
+                RowBox[{"!", 
+                 RowBox[{"EvenQ", "[", "h", "]"}]}], ",", 
+                RowBox[{"!", 
+                 RowBox[{"EvenQ", "[", "k", "]"}]}], ",", 
+                RowBox[{"!", 
+                 RowBox[{"EvenQ", "[", "l", "]"}]}]}], "]"}]}], "]"}], ",", 
+            RowBox[{
+             RowBox[{"Mod", "[", 
+              RowBox[{
+               RowBox[{"h", "+", "k", "+", "l", "-", "2"}], ",", "4"}], "]"}],
+              "\[Equal]", "0"}]}], "]"}], ",", 
+          RowBox[{"Print", "[", 
+           RowBox[{
+           "\"\<The Bragg angle \>\"", ",", "angle", ",", 
+            "\"\< corresponds to  plane (\>\"", ",", "h", ",", "k", ",", "l", 
+            ",", "\"\<)\>\""}], "]"}]}], "]"}]}]}], "]"}]}], "]"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.781475873425557*^9, 3.7814758780328217`*^9}, {
+  3.7814759289081497`*^9, 3.781476024372425*^9}, {3.7814760572059603`*^9, 
+  3.781476153910458*^9}},
+ CellLabel->
+  "In[322]:=",ExpressionUUID->"147b7cec-a93d-4b41-8b8a-f0073240cbf9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "38.54009090771922`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "0", "\[InvisibleSpace]", "0", "\[InvisibleSpace]", 
+   "2", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 38.54009090771922, " corresponds to  plane (", 0, 0, 2, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.781476155707424*^9},
+ CellLabel->
+  "During evaluation of \
+In[322]:=",ExpressionUUID->"a3a2d7e2-33b9-4734-8f32-fcd2d1537d0b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "38.54009090771922`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "0", "\[InvisibleSpace]", "2", "\[InvisibleSpace]", 
+   "0", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 38.54009090771922, " corresponds to  plane (", 0, 2, 0, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.781476155709632*^9},
+ CellLabel->
+  "During evaluation of \
+In[322]:=",ExpressionUUID->"3d9c2db9-e0c1-45d7-a56a-be090a18748b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "61.78053437222967`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "0", "\[InvisibleSpace]", 
+   "0", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 61.78053437222967, " corresponds to  plane (", 2, 0, 0, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.781476155711763*^9},
+ CellLabel->
+  "During evaluation of \
+In[322]:=",ExpressionUUID->"02b87e5e-f6ee-4b26-b73a-2e4e1fbdedad"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "61.78053437222967`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "0", "\[InvisibleSpace]", 
+   "4", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 61.78053437222967, " corresponds to  plane (", 2, 0, 4, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.781476155712914*^9},
+ CellLabel->
+  "During evaluation of \
+In[322]:=",ExpressionUUID->"6f2a74b6-e550-4ad6-8805-4c3e5919563c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "38.54009090771922`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "2", "\[InvisibleSpace]", 
+   "2", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 38.54009090771922, " corresponds to  plane (", 2, 2, 2, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.781476155714096*^9},
+ CellLabel->
+  "During evaluation of \
+In[322]:=",ExpressionUUID->"2e4b5256-9717-4736-a3b8-ca84859700f4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Bragg angle \"\>", "\[InvisibleSpace]", 
+   "61.78053437222967`", 
+   "\[InvisibleSpace]", "\<\" corresponds to  plane (\"\>", 
+   "\[InvisibleSpace]", "2", "\[InvisibleSpace]", "4", "\[InvisibleSpace]", 
+   "0", "\[InvisibleSpace]", "\<\")\"\>"}],
+  SequenceForm[
+  "The Bragg angle ", 61.78053437222967, " corresponds to  plane (", 2, 4, 0, 
+   ")"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.7814761557151737`*^9},
+ CellLabel->
+  "During evaluation of \
+In[322]:=",ExpressionUUID->"3d8d14e0-0b3c-435d-842f-db97cb260fdb"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{925, 1016},
+WindowMargins->{{2915, Automatic}, {Automatic, 64}},
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 210, 4, 55, "Subsection",ExpressionUUID->"cce2937a-87cb-4269-b247-5efb1e9bb05f"],
+Cell[CellGroupData[{
+Cell[815, 30, 3843, 110, 540, "Input",ExpressionUUID->"1860e74c-eeac-4d95-ada8-2198c708129f"],
+Cell[4661, 142, 277, 5, 35, "Output",ExpressionUUID->"23267a2e-4813-4378-b19d-1a93160131a8"],
+Cell[4941, 149, 280, 6, 35, "Output",ExpressionUUID->"b458beac-221c-4392-a4bc-2e569ac7555f"],
+Cell[5224, 157, 281, 6, 35, "Output",ExpressionUUID->"9d76db08-5fc3-4d53-afd2-895afce5b665"],
+Cell[CellGroupData[{
+Cell[5530, 167, 640, 13, 25, "Print",ExpressionUUID->"ef9f087f-f08f-4718-a6a5-0688845e8980"],
+Cell[6173, 182, 683, 15, 25, "Print",ExpressionUUID->"66a989f4-c3da-4e4f-ba7e-750765ab6604"],
+Cell[6859, 199, 681, 15, 25, "Print",ExpressionUUID->"1abc26ab-2258-492d-9de4-d9e822ecb452"],
+Cell[7543, 216, 681, 15, 25, "Print",ExpressionUUID->"61fe765f-091b-4b8f-ac86-f68434b6bdd9"],
+Cell[8227, 233, 681, 15, 25, "Print",ExpressionUUID->"f13bc54f-3268-4793-8bda-48a95479c450"],
+Cell[8911, 250, 680, 15, 25, "Print",ExpressionUUID->"446b9f2e-6b65-4a54-996c-913f973b5390"],
+Cell[9594, 267, 681, 15, 25, "Print",ExpressionUUID->"bf34e568-a596-4c7f-8a1d-62eb8bb89da0"],
+Cell[10278, 284, 678, 15, 25, "Print",ExpressionUUID->"824c04da-5564-4324-a74a-14a38510a1ef"],
+Cell[10959, 301, 680, 15, 25, "Print",ExpressionUUID->"c1a40ef4-fc6f-420a-8997-73b8f61c7c83"],
+Cell[11642, 318, 681, 15, 25, "Print",ExpressionUUID->"e18f5725-547a-46c3-8ab5-464e0c203ab2"],
+Cell[12326, 335, 683, 15, 25, "Print",ExpressionUUID->"272e268e-6916-4ad1-b856-93242d0104da"],
+Cell[13012, 352, 680, 15, 25, "Print",ExpressionUUID->"6cf061d6-24c2-4b69-ad81-ee7c7a23ee08"],
+Cell[13695, 369, 683, 15, 25, "Print",ExpressionUUID->"c14139de-26d9-4a77-aa09-427e8d716df7"],
+Cell[14381, 386, 681, 15, 25, "Print",ExpressionUUID->"5646427b-ce1a-4bd0-b6ec-5ae99fb8192a"],
+Cell[15065, 403, 678, 15, 25, "Print",ExpressionUUID->"d95f407b-e316-489a-9d07-cce6034166e3"],
+Cell[15746, 420, 678, 15, 25, "Print",ExpressionUUID->"57bbface-ac93-4324-87e5-86dfeaea7b18"],
+Cell[16427, 437, 678, 15, 25, "Print",ExpressionUUID->"0d1d6ee3-5f4f-4f05-aa30-e303a6e20c28"],
+Cell[17108, 454, 678, 15, 25, "Print",ExpressionUUID->"be66bf7c-99df-4c83-9512-64907a55ad20"],
+Cell[17789, 471, 678, 15, 25, "Print",ExpressionUUID->"530e6e60-3b6b-4e0b-9cb6-b63b2d499e19"],
+Cell[18470, 488, 676, 15, 25, "Print",ExpressionUUID->"694df8f0-14d1-4b78-8c75-cd830c8c2dc1"],
+Cell[19149, 505, 678, 15, 25, "Print",ExpressionUUID->"792c6e63-912f-47d7-b1f0-0d7643d26917"],
+Cell[19830, 522, 675, 15, 25, "Print",ExpressionUUID->"665a90a2-8c3b-4f31-902e-37495eb0fb5b"],
+Cell[20508, 539, 681, 15, 25, "Print",ExpressionUUID->"4452095a-8858-4e4b-8e48-6922b9cc09fb"],
+Cell[21192, 556, 678, 15, 25, "Print",ExpressionUUID->"bac0a6a2-effe-4447-bc36-7d33482a93e4"],
+Cell[21873, 573, 678, 15, 25, "Print",ExpressionUUID->"12b08ecf-9bda-4ec5-b994-6e9d9424dbbe"],
+Cell[22554, 590, 678, 15, 25, "Print",ExpressionUUID->"c4237570-6bb7-480d-8864-358025d68ba6"],
+Cell[23235, 607, 678, 15, 25, "Print",ExpressionUUID->"a98f3b87-3928-4c54-b3d9-ded678c1fd94"],
+Cell[23916, 624, 680, 15, 25, "Print",ExpressionUUID->"dd744d85-3457-4ffe-adf2-7ad8de33670a"],
+Cell[24599, 641, 676, 15, 25, "Print",ExpressionUUID->"04f189f1-5444-4821-96dc-1f41c164a9bb"],
+Cell[25278, 658, 677, 15, 25, "Print",ExpressionUUID->"a894191f-8b86-4266-aa1e-bd4d5710bd86"],
+Cell[25958, 675, 678, 15, 25, "Print",ExpressionUUID->"4269d27f-4df4-4fa3-92ed-6b271fee5ad9"],
+Cell[26639, 692, 681, 15, 25, "Print",ExpressionUUID->"9fe0491a-4fc6-43d3-8cb6-027d1b21a62e"],
+Cell[27323, 709, 678, 15, 25, "Print",ExpressionUUID->"121c236b-307f-4675-a4e1-573b87c62962"],
+Cell[28004, 726, 676, 15, 25, "Print",ExpressionUUID->"04c01327-6553-4ae5-adb1-8206d7d43c8a"],
+Cell[28683, 743, 678, 15, 25, "Print",ExpressionUUID->"3cb4c575-ef96-4f2d-ae8f-59d758518f8d"],
+Cell[29364, 760, 677, 15, 25, "Print",ExpressionUUID->"273b141c-972c-4edb-9aec-47432c87b105"],
+Cell[30044, 777, 676, 15, 25, "Print",ExpressionUUID->"6afda45a-414a-4d2c-882e-07040421c33d"],
+Cell[30723, 794, 676, 15, 25, "Print",ExpressionUUID->"6a107e5d-9b55-4680-be4e-ce680a37e161"],
+Cell[31402, 811, 678, 15, 25, "Print",ExpressionUUID->"7d10e389-6d7d-4c31-84be-0e85df980fb9"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32141, 833, 159, 3, 55, "Subsection",ExpressionUUID->"3ce75455-19d8-4211-8fb1-88ca5eb4fbdc"],
+Cell[32303, 838, 205, 3, 31, "Input",ExpressionUUID->"8b0b3274-116f-4573-8949-87bef86038f9"],
+Cell[CellGroupData[{
+Cell[32533, 845, 4699, 136, 573, "Input",ExpressionUUID->"147b7cec-a93d-4b41-8b8a-f0073240cbf9"],
+Cell[CellGroupData[{
+Cell[37257, 985, 583, 14, 25, "Print",ExpressionUUID->"a3a2d7e2-33b9-4734-8f32-fcd2d1537d0b"],
+Cell[37843, 1001, 583, 14, 25, "Print",ExpressionUUID->"3d9c2db9-e0c1-45d7-a56a-be090a18748b"],
+Cell[38429, 1017, 583, 14, 25, "Print",ExpressionUUID->"02b87e5e-f6ee-4b26-b73a-2e4e1fbdedad"],
+Cell[39015, 1033, 583, 14, 25, "Print",ExpressionUUID->"6f2a74b6-e550-4ad6-8805-4c3e5919563c"],
+Cell[39601, 1049, 583, 14, 25, "Print",ExpressionUUID->"2e4b5256-9717-4736-a3b8-ca84859700f4"],
+Cell[40187, 1065, 585, 14, 25, "Print",ExpressionUUID->"3d8d14e0-0b3c-435d-842f-db97cb260fdb"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

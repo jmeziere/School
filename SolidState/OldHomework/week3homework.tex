@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Homework 3}
+\author{Jason Meziere}
+\date{9 Oct. 2019}
+
+\maketitle
+
+\section{Day 7 Problem 1}
+
+Part 1 is under the document d6p1.py
+
+For part 2, I found that changing the distance between the electrons affected the magnitude of both the off-diagonal and on-diagonal terms. As the electrons got farther away, the off-diagonal terms both got smaller, but only one of the on-diagonal terms got smaller, while the other approached an assymptote. Deepening the well increased the magnitude of just the on-diagonal terms.
+
+\section{Day 7 Problem 2}
+
+Both part 1 and part 2 are in the document d6p2.py
+
+\section{Day 8 Problem 1}
+
+I will just start with the derivation.
+
+To start with, we will write the PDE:
+
+\begin{equation}
+H \left| \Psi \right> = E \left| \Psi \right>
+\end{equation}
+
+where $E$ is a constant and $H$ is a 2x2 matrix with on-diagonal terms $E_A$ and $E_B$, and off-diagonal terms $\beta$ for both.
+
+We assume that the solution is of the following form:
+\begin{equation}
+\left| \Psi \right>  = c_A \left| A \right> + c_B \left| B \right>
+\end{equation}
+
+In order for the right side of our PDE to be in the right form, we will multiply by the identity matrix. 
+This leaves our PDE with the following form:
+
+\begin{equation}
+\begin{pmatrix} E_A & \beta \\ \beta & E_B \end{pmatrix} =
+\begin{pmatrix} E & 0 \\ 0 & E \end{pmatrix}
+\end{equation}
+
+This is our eigenvalue problem.
+
+\section{Day 8 Problem 2}
+
+This is in the document d8p2.py.
+
+\section{Day 8 Problem 3}
+
+This is submitted as a png.
+
+\section{Day 9 Problem 1 \& 2}
+
+This is in the document d9p1-2.py.
+
+\section{Day 9 Problem 3}
+
+I found that changing nearly anything changed the energy values. I tried the well width, the spacing of atoms, and well depth, and they all changed the energies. Increasing any of these decreased the energies, but the well depth had the biggest effect.
+
+\end{document}

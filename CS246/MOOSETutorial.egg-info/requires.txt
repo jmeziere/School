@@ -1,0 +1,7 @@
+collection
+image
+kivy>=1.11
+os
+setuptools
+subprocess
+sys
